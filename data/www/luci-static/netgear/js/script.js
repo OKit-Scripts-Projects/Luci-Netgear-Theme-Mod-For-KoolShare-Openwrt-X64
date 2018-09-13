@@ -25,6 +25,10 @@
                    };
 
     $(document).ready(function(){
+      
+      $('.brand').text("Tenhow");
+      $('.brand').attr("href","/cgi-bin/luci//admin/status/overview");
+
       var status = $("body [data-title='Status']")
       var system = $("body [data-title='System']").eq(0)
       var service = $("body [data-title='Services']")
