@@ -26,7 +26,7 @@
 
     $(document).ready(function(){
       
-      $('.brand').text("Tenhow");
+      $('.brand').text("TENHOW");
       $('.brand').attr("href","/cgi-bin/luci//admin/status/overview");
 
       var status = $("body [data-title='Status']")
