@@ -4,5 +4,5 @@ Depends: libc
 Source: feeds/luci/themes/luci-theme-netgear
 Section: luci
 Architecture: all
-Installed-Size: 265080
+Installed-Size: 261896
 Description:  Netgear Theme

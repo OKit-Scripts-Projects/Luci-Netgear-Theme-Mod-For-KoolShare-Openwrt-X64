@@ -1,11 +1,12 @@
 #!/bin/sh
         SED="$(which sed)"
-	echo 'modifing color in orange-scheme'
+	echo 'Modifing general text color in orange-scheme file'
 	( $SED 's/#6d140b/rgb(154,37,143)/g' -i /koolshare/webs/css/orange-scheme.css)
-	echo 'set netgear theme as default'
+	echo 'Setting netgear theme as default'
 uci batch <<-EOF
 	set luci.themes.Netgear=/luci-static/netgear
 	set luci.main.mediaurlbase=/luci-static/netgear
 	commit luci
 EOF
+	echo 'Finished!'
 exit 0
