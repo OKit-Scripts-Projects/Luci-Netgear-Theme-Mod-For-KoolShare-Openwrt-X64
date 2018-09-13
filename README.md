@@ -7,7 +7,7 @@
 
 ## 演示
 适配后如图（请以实际为准）
-[![screenshot](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64-Tenhow/blob/master/screen.jpg "title")](截图)
+[![screenshot](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/raw/master/screen.jpg "title")](截图)
 
 ## 版权信息
 主题原作者: [tracemouse](http://koolshare.cn/space-uid-11558.html)
