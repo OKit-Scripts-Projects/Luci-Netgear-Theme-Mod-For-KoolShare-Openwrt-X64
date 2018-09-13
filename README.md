@@ -59,6 +59,8 @@ set netgear theme as default
 
 4.修正酷软页面的文字颜色：修改/koolshare/webs/css/orange-scheme.css 的网页配色
 
+5.点击 Brand 会跳转到「状况」/「总览」页面
+
 
 ### 文件说明：
 1.data/control 为源码
