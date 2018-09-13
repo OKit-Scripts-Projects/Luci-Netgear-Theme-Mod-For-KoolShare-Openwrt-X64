@@ -11,11 +11,19 @@
 
 
 ## 安装说明：
+### 方法一
 1.ipk用scp或其他方式上传 「x64.ipk」 到openwrt
 
 2.安装代码：
 ```
 opkg install ./x64.ipk 
+```
+### 方法二
+1.ssh 登录openwrt
+
+2.执行以下代码
+```
+wget https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/raw/master/x64.ipk && opkg install ./x64.ipk
 ```
 
 
