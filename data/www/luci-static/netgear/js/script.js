@@ -18,14 +18,7 @@
  *  Licensed to the public under the Apache License 2.0
  */
 (function ($) {
-    var exchange = function(a,b){
-                     var n = a.next(), p = b.prev();
-                     b.insertBefore(n);
-                     a.insertAfter(p);
-                   };
-
     $(document).ready(function(){
-      $('.brand').text("Tenhow")
       $('.brand').attr("href","/cgi-bin/luci//admin/status/overview");
      
       var status = $("body [data-title='Status']")
@@ -36,18 +29,11 @@
       var network  = $("body [data-title='Network']")
       var static  = $("body [data-title='Bandwidth Monitor']")
 
-      qos.text("质量")
-
-      exchange(control.parent(),static.parent())
-      exchange(service.parent(),qos.parent())
-      exchange(system.parent(),static.parent())
 
       var newLine_koolSoft = $("<li class='slide'><a class='menu' data-title='KoolSoft' href='/cgi-bin/luci/admin/koolsoft'>酷软</a></li>");
-      newLine_koolSoft.insertBefore(service.parent());
+      newLine_koolSoft.insertAfter(service.parent());
       var koolSoft = $("body [data-title=KoolSoft]")
 
-      exchange(service.parent(),network.parent())
-      exchange(service.parent(),network.parent())
 
     })
 	
