@@ -1,0 +1,8 @@
+Package: luci-theme-netgear
+Version: git-17.016.25656-a85807d-1
+Depends: libc
+Source: feeds/luci/themes/luci-theme-netgear
+Section: luci
+Architecture: all
+Installed-Size: 265080
+Description:  Netgear Theme

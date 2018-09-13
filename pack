@@ -1,0 +1,31 @@
+#!/bin/bash
+TAR="${TAR:-$(which tar)}"
+GZIP="$(which gzip)"
+
+tmp_dir=/root/netgear
+CONTROL=control
+pkg_dir=/root/netgear
+ogargs=''
+
+echo $CONTROL > $tmp_dir/tarX
+# Preserve permissions (-p) when creating data.tar.gz as non-root user
+#( cd $pkg_dir && $TAR $ogargs -X $tmp_dir/tarX --format=gnu  -cpf -  --mtime="$TIMESTAMP" . | $GZIP -n - > $tmp_dir/data.tar.gz )
+(cd $pkg_dir/data && $TAR  --format=gnu  -cpf -  --mtime="$TIMESTAMP" . | $GZIP -n - > $tmp_dir/data.tar.gz )
+
+installed_size=`stat -c "%s" $tmp_dir/data.tar.gz`
+sed -i -e "s/^Installed-Size: .*/Installed-Size: $installed_size/" \
+    $pkg_dir/$CONTROL/control
+
+( cd $pkg_dir/$CONTROL && $TAR $ogargs --format=gnu -cf -  --mtime="$TIMESTAMP" . | $GZIP -n - > $tmp_dir/control.tar.gz )
+rm $tmp_dir/tarX
+
+echo "2.0" > $tmp_dir/debian-binary
+
+pkg_file=x64.ipk
+rm -f $pkg_file
+( cd $tmp_dir && $TAR $ogargs --format=gnu -cf -  --mtime="$TIMESTAMP" ./debian-binary ./data.tar.gz ./control.tar.gz | $GZIP -n - > $pkg_file )
+
+rm $tmp_dir/debian-binary $tmp_dir/data.tar.gz $tmp_dir/control.tar.gz
+#rmdir $tmp_dir
+
+echo "Packaged contents of $pkg_dir into $pkg_file"

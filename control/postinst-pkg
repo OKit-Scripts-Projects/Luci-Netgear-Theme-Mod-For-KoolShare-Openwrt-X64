@@ -1,0 +1,4 @@
+[ -n "${IPKG_INSTROOT}" ] || {
+	(. /etc/uci-defaults/30_luci-theme-netgear) && rm -f /etc/uci-defaults/30_luci-theme-netgear
+	exit 0
+}
