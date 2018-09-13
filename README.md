@@ -1,5 +1,10 @@
 # Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64
 
+[![GitHub issues](https://img.shields.io/github/issues/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64.svg)](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/issues)
+[![GitHub forks](https://img.shields.io/github/forks/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64.svg)](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/network)
+[![GitHub stars](https://img.shields.io/github/stars/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64.svg)](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/stargazers)
+
+
 ## 演示
 适配后如图
 [![screenshot](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/raw/master/screen.jpg "title")](截图)
