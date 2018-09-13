@@ -5,7 +5,7 @@
 [![screenshot](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/raw/master/screen.jpg "title")](截图)
 
 ## 版权信息
-主题原作者: tracemouse
+主题原作者: [tracemouse](http://koolshare.cn/space-uid-11558.html)
 
 原帖地址:   http://koolshare.cn/thread-81637-1-1.html
 
@@ -63,7 +63,9 @@ set netgear theme as default
 3.ipk 为生成的openwrt x64 主题插件包
 
 
-### 开发说明：
-1.如需自行打包，则请在linux系统下（mac和windows无效）
+## 开发方法：
+1.如需自行打包，请确保在linux系统下（mac和windows无效）
 
 2.打包使用命令：./pack
+
+
