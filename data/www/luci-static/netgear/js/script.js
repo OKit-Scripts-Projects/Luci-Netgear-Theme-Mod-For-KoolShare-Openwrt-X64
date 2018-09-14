@@ -117,7 +117,7 @@
 		var c_href = window.location.href;
 
 		if ($("body [value='登录']")){
-			$("body [value='登录']").class("signIn")
+			$("body [value='登录']").addClass("signIn")
 			//attr("data-title",'page.signin.btn')　
 			var reset_btn = $(".cbi-button.cbi-button-reset").eq(0)
 			var exit_btn = $(".cbi-button-apply").eq(0)
