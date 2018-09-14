@@ -10,6 +10,14 @@
 /*
  *  Font generate by Icomoon<icomoon.io>  Advancetomato
  */
+/*
+  fontawesome 开发所需网址：
+https://fontawesome.com/v4.7.0/cheatsheet/
+http://www.fontawesome.com.cn/faicons/
+*/
+
+
+/*@import "font-awesome.min.css";*/
 
 @font-face {
     font-family: 'Roboto';
@@ -44,9 +52,26 @@
         url("../fonts/advancedtomato.svg#advancedtomato") format("svg");
     font-weight: normal;
     font-style: normal;
-
 }
-
+/*@font-face {
+    font-family: "FontAwesome";
+    font-weight: normal;
+    font-style : normal;
+           src : url("../fonts/fontawesome-webfont.eot?v=4.7.0");
+           src : url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+                 url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+                 url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+                 url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+                 url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+}
+*/
+@font-face {
+font-family: 'FontAwesome';
+src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}　
  
 .cbi-button-up,
 .cbi-button-down,
@@ -198,12 +223,49 @@ footer > a {
     text-transform: none !important;
 }
 
+.signIn {
+/*	content: "\f08b";
+	font-family: "FontAwesome" !important;
+	font-size: 14px;
+	position: relative;
+	left:-5px;*/
+	
+    display: inline-block;
+    top: -1px;
+    left:-10px;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    font-family: "FontAwesome" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+
 .myIcon-logout:after{
-	content: "\e005";
+/*	content: "\e005";*/
+/*	content: "\f011";*/
+/*    font-family: "FontAwesome" !important;*/
+/*	font-size: 14px;*/
+	content: "\f08b";
+    font-family: "FontAwesome" !important;
+	font-size: 14px;
+	position: relative;
+	left:-5px;
 }
 
 .myIcon-reboot:after{
-	content: "\e02a";
+/*	content: "\e02a";*/
+	content: "\f011";
+    font-family: "FontAwesome" !important;
+	font-size: 14px;
+	position: relative;
+	left:-5px;
 }
 
 .myIcon-wifi:after{
@@ -322,6 +384,7 @@ header > .container > .brand {
     float:left;
     font-weight:900;
     letter-spacing:3px;
+	cursor:pointer
 }
 header > .container > a[class="brand"]:after {
     content:"®";
@@ -447,14 +510,14 @@ header > .container > .brand-hostname {
 	padding-top:6px;
 }
 .main > .main-left > .nav > .slide > a[data-title="Status"]:before {
-    content: "\e026";
+/*    content:"\f08e"*/
     display: inline-block;
     top: -1px;
     left:-10px;
     position: relative;
     vertical-align: middle;
     display: inline-block;
-    font-family: "advancedtomato" !important;
+    font-family: "FontAwesome" !important;
     font-style: normal !important;
     font-weight: normal !important;
     font-variant: normal !important;
@@ -470,9 +533,10 @@ header > .container > .brand-hostname {
     position: relative;
     vertical-align: middle;
     display: inline-block;
-    font-family: "advancedtomato" !important;
+    font-family: "FontAwesome" !important;
     font-style: normal !important;
     font-weight: normal !important;
+	font-size: 16px !important;
     font-variant: normal !important;
     text-transform: none !important;
     speak: none;
@@ -482,37 +546,75 @@ header > .container > .brand-hostname {
 
 
 .main > .main-left > .nav > .slide > a[data-title="Status"]:before {
-    content: "\e026";
+/*	font-family: "advancedtomato" !important;*/
+    content: "\f015";
+	font-size: 18.8px !important;
+}
+
+.main > .main-left > .nav > .slide > a[data-title="Bandwidth Monitor"]:before {
+    content: "\f080";
+}
+
+.main > .main-left > .nav > .slide > a[data-title="KoolSoft"]:before {
+/*    content: "\f1b2";
+	font-size: 18px !important;*/
+	
+/*	    content: "\f0d1";*/
+
+	    content: "\f00a";
+/*		content: "\f009";*/
+		font-size: 18px !important;
+/*	  content: "\e007";f1b3*/
+/*	  	font-family: "advancedtomato" !important;*/
+}
+
+.main > .main-left > .nav > .slide > a[data-title="Services"]:before {
+/*    content: "\e018";*/
+/*	  content: "\f1cb";
+	  font-size: 17px !important;*/
+/*	    content: "\f1b3";*/
+		    content: "\f022";
+			font-size: 17.7px !important;
+}
+
+
+.main > .main-left > .nav > .slide > a[data-title="QOS"]:before {
+/*    content: "\e00f";*/
+
+/*    content: "\f1be";
+	font-size: 14.3px !important;*/
+	
+    content: "\f213";
+	font-size: 16.4px !important;
 }
 
 .main > .main-left > .nav > .slide > a[data-title="System"]:before {
-    content: "\e01c";
+/*    content: "\e01c";*/
+    content: "\f0ad";
+/*	xf0ad*/
+		font-size: 19.5px !important;
 }
 
 .main > .main-left > .nav > .slide > a[data-title="Network"]:before {
-    content: "\e00e";
+/*    content: "\f0ac";*/
+	    content: "\f012";
+	
+		font-size: 19px !important;
 }
+
+.main > .main-left > .nav > .slide > a[data-title="Control"]:before {
+/*    content: "\e023";*/
+    content: "\f236";
+		font-size: 16px !important;
+}
+
 .main > .main-left > .nav > .slide > a[data-title="Usbapps"]:before {
-    content: "\e00b";
+/*    content: "\e00b";*/
 }
 .main > .main-left > .nav > .slide > a[data-title="VPN"]:before {
-    content: "\e007";
+/*    content: "\e007";*/
 }
-.main > .main-left > .nav > .slide > a[data-title="KoolSoft"]:before {
-    content: "\e007";
-}
-.main > .main-left > .nav > .slide > a[data-title="QOS"]:before {
-    content: "\e00f";
-}
-.main > .main-left > .nav > .slide > a[data-title="Control"]:before {
-    content: "\e023";
-}
-.main > .main-left > .nav > .slide > a[data-title="Bandwidth Monitor"]:before {
-    content: "\e024";
-}
-.main > .main-left > .nav > .slide > a[data-title="Services"]:before {
-    content: "\e029";
-}
+
 .main > .main-left > .nav > .slide > a[data-title="NAS"]:before {
     content: "\e00b";
 }
@@ -550,12 +652,16 @@ header > .container > .brand-hostname {
 
 .main > .main-left > .nav > .slide > .menu {
     display: block;
-    padding: 10px 35px;
+    padding: 10px 29.5px;
     text-decoration: none;
     cursor: pointer;;
 }
 
-.main > .main-left > .nav > li:hover,
+/*.main > .main-left > .nav > li:hover,
+.main > .main-left > .nav > .slide > .menu:hover {
+    background: rgb(133,129,216);
+	color:white;
+}*/
 .main > .main-left > .nav > .slide > .menu:hover {
     background: rgb(133,129,216);
 	color:white;
@@ -564,6 +670,7 @@ header > .container > .brand-hostname {
 .main > .main-left > .nav > .slide:hover {
     background: none;
 }
+
 .slide-menu {
     overflow:hidden;
     }
@@ -594,22 +701,72 @@ header > .container > .brand-hostname {
 	background:none !important;
 	border: none !important;
 }
+/* second li*/
 .main > .main-left > .nav > .slide > .slide-menu > li > a:after{
-	font-family: "advancedtomato" !important;
+/*	font-family: "advancedtomato" !important;
+	content: "\e001";
+*/
+	font-family: "FontAwesome" !important;
+	content: "\f105";
     font-style: normal !important;
     font-weight: normal !important;
     font-variant: normal !important;
-	content: "\e001";
+
 	float: right;
 	padding-right: 5px;
 }
 
+.main > .main-left > .nav > .slide > .slide-menu > li> a[data-title="USB Printer Server"]:before {
+/*    content: "\e018";*/
+/*	  content: "\f1cb";
+	  font-size: 17px !important;*/
+/*	    content: "\f1b3";*/
+	content: "\f02f";
+	font-size: 13px !important;
+	font-family: "FontAwesome" !important;
+	float: left;
+	
+    display: inline-block;
+/*    top: -1px;*/
+    left:-6.18px;
+    position: relative;
+/*    vertical-align: middle;*/
+/*    display: inline-block;*/
+/*    font-family: "FontAwesome" !important;*/
+/*    font-style: normal !important;
+    font-weight: normal !important;*/
+/*	font-size: 16px !important;*/
+/*    font-variant: normal !important;
+    text-transform: none !important;*/
+/*    speak: none;*/
+
+    -webkit-font-smoothing: antialiased;
+}
+
+/*# 去掉小黑点样式*/
+ul li{
+list-style-type:none;
+}
+
+
+/* 边距*/
+.main > .main-left > .nav > .slide > .slide-menu  {
+/*    display: block;*/
+/*/*    text-decoration: none;*/
+    cursor: pointer !important;
+	padding: 0px 18px;
+}
+
+
 .main > .main-left > .nav > .slide > .slide-menu > li > a:hover {
-	color:white;
+	color:white !important;
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > .active > a {
-    color: white;
+    color: white !important;
+}
+.main > .main-left > .nav > .slide > .slide-menu > .active > li {
+    color: white !important;
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > li:hover {
@@ -621,6 +778,12 @@ header > .container > .brand-hostname {
     background-color: rgb(133,129,216);
     cursor: pointer;
 }
+
+.main > .main-left > .nav > .slide > .menu > .active {
+    background-color: rgb(133,129,216) !important;
+    cursor: pointer !important;
+}
+
 
 li {
     list-style-type: none;

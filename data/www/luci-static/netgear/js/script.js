@@ -17,16 +17,49 @@
  *
  *  Licensed to the public under the Apache License 2.0
  */
+
+
+// (function() {
+//     alert("hi");
+// })(jQuery)
+
+
 (function ($) {
-    var exchange = function(a,b){
+	
+     // 感谢 脚本之家 的未知作者 https://www.jb51.net/article/39704.htm
+	function okit_$wait(selector,func,interval,times){
+		console.log("start")
+	    var _times = times || -1, //无数次
+	    _interval = interval || 100, //20毫秒每次
+	    _selector = selector, //选择器
+	    _iIntervalID, //定时器id
+		_self = $(_selector);
+
+	    if( _self.length ){ //如果已经获取到了，就直接执行函数
+	        func && func.call(_self);
+	    } else {
+	        _iIntervalID = setInterval(function() {
+	            if(!_times) { //是0就退出
+	            clearInterval(_iIntervalID);
+	            }
+	            _times <= 0 || _times--; //如果是正数就 --      
+				console.log(_selector)
+	            _self = $(_selector); //再次选择
+	            if( _self.length ) { //判断是否取到
+	            func && func.call(_self);
+	            clearInterval(_iIntervalID);
+	            }
+	        }, _interval);
+	    }
+	}
+	
+     var exchange = function(a,b){
                      var n = a.next(), p = b.prev();
                      b.insertBefore(n);
                      a.insertAfter(p);
                    };
-
-    $(document).ready(function(){
-      
-      $('.brand').text("TENHOW");
+     
+      // $('.brand').text("NetGEAR");
       $('.brand').attr("href","/cgi-bin/luci//admin/status/overview");
 
       var status = $("body [data-title='Status']")
@@ -43,13 +76,140 @@
       exchange(service.parent(),qos.parent())
       exchange(system.parent(),static.parent())
 
-      var newLine_koolSoft = $("<li class='slide'><a class='menu' data-title='KoolSoft' href='/cgi-bin/luci/admin/koolsoft'>酷软</a></li>");
-      newLine_koolSoft.insertBefore(service.parent());
-      var koolSoft = $("body [data-title=KoolSoft]")
 
-      exchange(service.parent(),network.parent())
-      exchange(service.parent(),network.parent())
+	  network.parent().insertAfter(static.parent());
+	  qos.parent().insertAfter(network.parent());
 
+
+        var newLine_koolSoft = $("<li class='slide'>" +
+		"<a class='menu' data-title='KoolSoft' href='/cgi-bin/luci/admin/koolsoft'>酷软</a>" + 
+		"</li>");
+        newLine_koolSoft.insertBefore(service.parent());
+        // var koolSoft = $("body [data-title=KoolSoft]")
+		
+		function okit_jq_lia_deactive(sender){
+			// sender.parent().parent().prev().css("background-color","rgb(133,129,216)")
+			// sender.parent().parent().prev().css("color","white")
+			 
+			sender.parent().parent().children().removeClass('active')
+			sender.parent().addClass('active')
+			var storage=window.sessionStorage;
+
+			storage.lastClick=sender[0].dataset.title;
+		}
+		
+		function okit_jq_lia_deactive_awake(sender){
+			// sender.parent().parent().prev().css("background-color","rgb(133,129,216)")
+			// sender.parent().parent().prev().css("color","white")
+			var storage = window.sessionStorage;
+			sender.parent().parent().show()
+			 
+			sender.parent().parent().children().removeClass('active')
+			sender.parent().addClass('active')
+			
+			if ( storage.lastClick=="KoolSoft.install"){
+   			 okit_$wait("#app2-server1-advanced-tab",function(){
+   			 	 this.click()
+   			 })
+			}
+		}
+		
+		var c_href = window.location.href;
+
+		if ($("body [value='登录']")){
+			$("body [value='登录']").class("signIn")
+			//attr("data-title",'page.signin.btn')　
+			var reset_btn = $(".cbi-button.cbi-button-reset").eq(0)
+			var exit_btn = $(".cbi-button-apply").eq(0)
+			reset_btn.hide()
+			exit_btn.hide()
+  			 okit_$wait("body [data-title='Status']",function(){
+				 reset_btn.show()
+				 exit_btn.show()
+  			 })	
+		}
+		
+		
+    $(document).ready(function(){
+		var c_href = window.location.href;
+		
+		
+	    var storage = window.sessionStorage;
+		if ( storage.lastClick) {
+			var name_of_last_click = storage.lastClick.split(".")[1]
+
+			
+			if ( storage.lastClick=="KoolSoft.install"){
+				name_of_last_click = 'soft-center'
+			}
+
+		   	var match_last_click = c_href.indexOf(name_of_last_click)
+			if (match_last_click>-1){
+   			 okit_$wait("body [data-title='"+storage.lastClick+"']",function(){
+   			 	 var last_selected_lia = $("body [data-title='"+storage.lastClick+"']")
+   				 okit_jq_lia_deactive_awake(last_selected_lia)
+   			 })	
+			}					 
+		}else {
+		 	storage.lastClick = null;
+		 }
+
+		 
+	     var koolSoft = $("body [data-title=KoolSoft]")
+		 var list = 
+		 $("<ul id='koolsoftSlide' class='slide-menu active' style='display: none;'>" +
+			        "<li><a data-title='KoolSoft.install' >安装软件</a></li>" +
+			 		"<li><a data-title='KoolSoft.memory' href='/cgi-bin/luci/admin/koolsoft#/Module_memory.asp'>内存管理</a></li>" +
+			 		"<li><a data-title='KoolSoft.koolss' href='/cgi-bin/luci/admin/koolsoft#/Module_koolss.asp'>酸酸乳</a></li>" +
+			 		"<li><a data-title='KoolSoft.koolproxy' href='/cgi-bin/luci/admin/koolsoft#/Module_koolproxy.asp'>去广告</a></li>" +
+			 		"<li><a data-title='KoolSoft.fastdick' href='/cgi-bin/luci/admin/koolsoft#/Module_fastdick.asp'>迅雷快鸟</a></li>" +		
+			 		"<li><a data-title='KoolSoft.aria2' href='/cgi-bin/luci/admin/koolsoft#/Module_aria2.asp'>Aria2</a></li>" +		
+					"<li><a data-title='KoolSoft.aria2ng'>Aria2Ng</a></li>" +
+			 		"<li><a data-title='KoolSoft.transmission' href='/cgi-bin/luci/admin/koolsoft#/Module_transmission.asp'>Transmission</a></li>" +		
+		 "</ul>");
+		 list.insertAfter(koolSoft);
+
+ 		 $(".main .main-left  .nav .menu").unbind();
+ 		 $(".main .main-left  .nav .menu").removeAttr("href");
+		 $(".main .main-left  .nav .menu").bind('click', function() {
+			 if ($(this).next().css("display")=="block") {
+			 	$(this).next().hide()//css("display","none")
+			 }else {
+			    $(".main .main-left .nav .slide .slide-menu").hide()
+			 	$(this).next().show()//css("display","block")
+			 }
+             // 对象转html
+			 // var ul = $(this).next()
+			 // var ul_html = ul[0].outerHTML
+			 // console.log(ul[0].outerHTML)
+			 // var visible = ul_html.match("display: none;")
+			 // console.log(visible)
+
+		 });
+		 
+		 // $(" li a").bind('click', function() {
+		 // 			 $(this).parent().parent().prev().css("background-color","rgb(133,129,216)")
+		 // 			 $(this).parent().parent().prev().css("color","white")
+		 //
+		 // }
+
+		 
+		 $("#koolsoftSlide li a").bind('click', function() {
+			 okit_jq_lia_deactive($(this))
+		 });
+		 
+		 $("body [data-title='KoolSoft.install']").bind('click', function() {
+			 okit_jq_lia_deactive($(this))
+			 window.location.href='/cgi-bin/luci/admin/koolsoft#/soft-center.asp'; 
+			 okit_$wait("#app2-server1-advanced-tab",function(){
+			 	 this.click()
+			 })
+		 });
+		 
+		 $("body [data-title='KoolSoft.aria2ng']").bind('click', function() {
+			 okit_jq_lia_deactive($(this))
+			  window.open('http://www.nasdiy.net/AriaNg/#!/downloading');
+		 });
     })
 	
     $(".main > .loading").fadeOut();
