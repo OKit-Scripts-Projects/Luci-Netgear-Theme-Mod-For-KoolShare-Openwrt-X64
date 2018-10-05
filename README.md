@@ -5,6 +5,9 @@
 [![GitHub stars](https://img.shields.io/github/stars/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64.svg)](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/stargazers)
 
 
+## 最新
+已在AdvancedTomato基础上Mod Netgear主题，看issues 多少决定是否打包。
+
 ## 演示
 适配后如图
 [![screenshot](https://github.com/OKit-Scripts-Projects/Luci-Netgear-Theme-Mod-For-KoolShare-Openwrt-X64/raw/master/screen.jpg "title")](截图)
